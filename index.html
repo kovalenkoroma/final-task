@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css"/>
+    <title>FinalTask</title>
+</head>
+<body>
+<div id="main">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Graphics</a></li>
+                <li><a href="#">Calculator</a></li>
+                <li><a href="#">Competitors</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <div class="graphics-slide">
+            <h1>Xarelto<sup>®</sup>: An Effective Treatment Option in Your VTE Patients with Cancer<sup>a,8</sup></h1>
+            <p class="title-axis-y">%PATIENTS<sup>b</sup></p>
+            <div class="graphics">
+                <ul class="axis-y">
+                    <li>8 &ndash;</li>
+                    <li>7 &ndash;</li>
+                    <li>6 &ndash;</li>
+                    <li>5 &ndash;</li>
+                    <li>4 &ndash;</li>
+                    <li>3 &ndash;</li>
+                    <li>2 &ndash;</li>
+                    <li>1 &ndash;</li>
+                    <li>0</li>
+                </ul>
+                <p class="graphic-title">HR 0.69;<br>95% CI 0.36-1.33</p>
+                <div class="index blue-column">
+                    <p>7.1</p>
+                    <p>n=20/281</p>
+                    <p>ENOHAPARIN / <br> VKA</p>
+                </div>
+                <div class="index red-column">
+                    <p>5.1</p>
+                    <p>n=16/316</p>
+                    <p>XARELTO</p>
+                </div>
+                <div class="axis-x">
+                    <hr>
+                    <p>0</p>
+                </div>
+                <p class="title-axis-x">Cancer</p>
+            </div>
+            <p class="footnote">
+                <sup>a</sup>Xarelto is contraindicated in lesions or conditions, if they are considered to be a significant risk for major
+                bleeding, which may include the presence of malignant neoplasms at high risk of bleeding.
+                <sup>b</sup>Outcome: symptomatic, recurrent VTE.
+            </p>
+        </div>
+        <div class="calculator-slide">
+            <h1>Xarelto<sup>®</sup>Estimator of Resources Saved</h1>
+            <div class="dvt-calculator">
+                <div class="calculate">
+                    <div>
+                        <input type="text" placeholder="Enter number of DVT patients here" />
+                        <input type="button" value="CALCULATE" />
+                        <input type="button" class="help" value="?" />
+                    </div>
+                    <div class="description">
+                        <p>
+                            Assumptions to estimate calculations:proportion of patients with DTV contraindicated for Xarelto or LMWH/VKA<sup>1,2</sup>=7.5%<br/>
+                            Number of patients with DVT-7.5%=<span class="patients-count"> [A]</span> Total number of DVT patients eligible for dual LMWH/VKA or Xarelto
+                        </p>
+                    </div>
+                </div>
+                <div class="calculation-injections">
+                    <div class="calculation-name">
+                        <p>Injections avoided<sup>3-7</sup></p>
+                        <input type="text" value="[B+C]" />
+                    </div>
+                    <div class="calculation-description">
+                        <input type="button" value="+" />
+                        <p>
+                            Injections avoided = number of LMWH injections received by cancer patients with DVT + LMWH injections received by DVT patients without cancer
+                        </p>
+                    </div>
+                </div>
+                <div class="calculation-inr-visits">
+                    <div  class="calculation-name">
+                        <p>
+                            INR clinic visits avoided<sup>3,7,8</sup>
+                        </p>
+                        <input type="text" value="E" />
+                    </div>
+                    <div class="calculation-description">
+                        <input type="button" value="+" />
+                        <p>
+                            INR clinic avoided = number of DVT patients eligible for VKA treatment x number of INR monitoring visits per patient
+                        </p>
+                    </div>
+                </div>
+                <div class="calculation-nurse-visits">
+                    <div  class="calculation-name">
+                        <p>
+                            Nurse visits avoided<sup>9</sup>
+                        </p>
+                        <input type="text" value="G" />
+                    </div>
+                    <div class="calculation-description">
+                        <input type="button" value="+" class="btn-add" />
+                        <p>Nurse assistance visits avoided = number of non-cancer DVT patients eligible for initial LMWH treatment x proportion of these patients treated by nurses in their own homes x mean number of LMWH injections administrated
+                        </p>
+                    </div>
+                </div>
+                <div class="calculation-bed-days">
+                    <div  class="calculation-name">
+                        <p>
+                            Hospital bed days saved<sup>10</sup>
+                        </p>
+                        <input type="text" value="H" />
+                    </div>
+                    <div class="calculation-description">
+                        <input type="button" value="+" class="btn-add" />
+                        <p>
+                            Hospital bed days saved = number of eligible DVT patients x proportion of DVT patients hospitalised x number of hospital bed days saved per DVT patient treated with Xarelto
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="pe-calculator">
+                <div class="calculate">
+                    <div>
+                        <input type="text" placeholder="Enter number of  patients with PE here" />
+                        <input type="button" value="CALCULATE" />
+                        <input type="button" class="help" value="?" />
+                    </div>
+                    <div class="description">
+                        <p>
+                            Assumptions to estimate calculations:proportion of patients with PE contraindicated for Xarelto or LMWH/VKA<sup>1,2</sup>=15%<br/>
+                            Number of patients with PE-15%=<span class="patients-count"> [A]</span> Total number of PE patients eligible for dual LMWH/VKA or Xarelto
+                        </p>
+                    </div>
+                </div>
+                <div class="calculation-injections">
+                    <div class="calculation-name">
+                        <p>Injections avoided<sup>3-7</sup></p>
+                        <input type="text" value="[B+C]" />
+                    </div>
+                    <div class="calculation-description">
+                        <input type="button" value="+" />
+                        <p>
+                            Injections avoided = number of LMWH injections received by cancer patients with PE + LMWH injections received by PE patients without cancer
+                        </p>
+                    </div>
+                </div>
+                <div class="calculation-inr-visits">
+                    <div class="calculation-name">
+                        <p>
+                            INR clinic visits avoided<sup>3,7,8</sup>
+                        </p>
+                        <input type="text" value="E" />
+                    </div>
+                    <div class="calculation-description">
+                        <input type="button" value="+" />
+                        <p>
+                            INR clinic avoided = number of PE patients eligible for VKA treatment x number of INR monitoring visits per patient
+                        </p>
+                    </div>
+                </div>
+                <div class="calculation-bed-days">
+                    <div class="calculation-name">
+                        <p>
+                            Hospital bed days saved<sup>10</sup>
+                        </p>
+                        <input type="text" value="H" />
+                    </div>
+                    <div class="calculation-description">
+                        <input type="button" value="+"  class="btn-add"/>
+                        <p>
+                            Hospital bed days saved = number of eligible PE patients x proportion of PE patients hospitalised x number of hospital bed days saved per PE patient treated with Xarelto
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="combined-calculation">
+                <p class="combined-title">Combined DVT + PE Resources Saved</p>
+                <div>
+                    <p>Injections avoided<sup>3-7,11</sup></p>
+                    <span>[DVT + PE]</span>
+                </div>
+                <div>
+                    <p>INR clinic visits avoided<sup>3,7,8,11</sup></p>
+                    <span>[DVT + PE]</span>
+                </div>
+                <div>
+                    <p>Nurse visits avoided<sup>9</sup></p>
+                    <span>[DVT]</span>
+                </div>
+                <div>
+                    <p>Hospital bed days saved<sup>10</sup></p>
+                    <span>[DVT + PE]</span>
+                </div>
+            </div>
+            <p class="footnote">
+                Numbers provided are based on general epidemiological research and on clinical trial experience from the Phase III programme with Xarelto. Healthcare practice may be different in your country (both before and after introduction of Xarelto), and thus the estimation may not reflect your country’s perspective. Actual costs are not included.
+            </p>
+        </div>
+        <div class="competitors-slide">
+            <h1>Xarelto<sup>®</sup>DVT Patients Reported Higher Satisfaction<sup>a,16</sup></h1>
+            <div class="scales-block">
+                <div class="double-arrow">
+                    <p class="preference">High Preference</p>
+                    <div class="arrows">
+                        <div class="triangle-up"></div>
+                        <div class="gradient-column"></div>
+                        <div class="triangle"></div>
+                    </div>
+                    <p class="preference">Lower Preference</p>
+                </div>
+                <div class="scales">
+                    <div class="lever"></div>
+                    <div class="scalepan-left">
+                        <hr class="left"/>
+                        <hr class="left"/>
+                        <div class="pink-bg">
+                            <p class="scale-title">80.8</p>
+                        </div>
+                    </div>
+                    <div class="scalepan-right">
+                        <hr class="right"/>
+                        <hr class="right"/>
+                        <div class="blue-bg">
+                            <p class="scale-title">72.7</p>
+                        </div>
+                    </div>
+
+                    <div class="stand">
+                        <div class="triangle-up"></div>
+                        <div class="pillar"></div>
+                        <div class="base">
+                            <p>
+                                p<0.0001
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="scales-parameters">
+                    <div>
+                        <div class="square pink-bg"></div>
+                        <p>Xarelto(N=702)</p>
+                    </div>
+                    <div>
+                        <div class="square blue-bg"></div>
+                        <p>Enoxaparin/VKA(N=677)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
