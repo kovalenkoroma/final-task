@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css"/>
+    <script src="knockout-3.1.0.js"></script>
     <title>FinalTask</title>
 </head>
 <body>
@@ -10,14 +11,14 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Graphics</a></li>
-                <li><a href="#">Calculator</a></li>
-                <li><a href="#">Competitors</a></li>
+                <li><a href="#" data-bind="click:showGraphics">Graphics</a></li>
+                <li><a href="#" data-bind="click:showCalculator">Calculator</a></li>
+                <li><a href="#" data-bind="click:showCompetitors">Competitors</a></li>
             </ul>
         </nav>
     </header>
     <div id="content">
-        <div class="graphics-slide">
+        <div class="graphics-slide" data-bind="visible:graphicsSlide">
             <h1>Xarelto<sup>®</sup>: An Effective Treatment Option in Your VTE Patients with Cancer<sup>a,8</sup></h1>
             <p class="title-axis-y">%PATIENTS<sup>b</sup></p>
             <div class="graphics">
@@ -55,26 +56,26 @@
                 <sup>b</sup>Outcome: symptomatic, recurrent VTE.
             </p>
         </div>
-        <div class="calculator-slide">
+        <div class="calculator-slide" data-bind="visible:calculatorSlide">
             <h1>Xarelto<sup>®</sup>Estimator of Resources Saved</h1>
             <div class="dvt-calculator">
                 <div class="calculate">
                     <div>
-                        <input type="text" placeholder="Enter number of DVT patients here" />
+                        <input type="text" placeholder="Enter number of DVT patients here" data-bind="value:numberDvt"/>
                         <input type="button" value="CALCULATE" />
                         <input type="button" class="help" value="?" />
                     </div>
                     <div class="description">
                         <p>
                             Assumptions to estimate calculations:proportion of patients with DTV contraindicated for Xarelto or LMWH/VKA<sup>1,2</sup>=7.5%<br/>
-                            Number of patients with DVT-7.5%=<span class="patients-count"> [A]</span> Total number of DVT patients eligible for dual LMWH/VKA or Xarelto
+                            Number of patients with DVT-7.5%=<span class="patients-count" data-bind="text:valueA()"> </span> Total number of DVT patients eligible for dual LMWH/VKA or Xarelto
                         </p>
                     </div>
                 </div>
                 <div class="calculation-injections">
                     <div class="calculation-name">
                         <p>Injections avoided<sup>3-7</sup></p>
-                        <input type="text" value="[B+C]" />
+                        <input type="text"  value="B+C" data-bind="value:summa()"/>
                     </div>
                     <div class="calculation-description">
                         <input type="button" value="+" />
@@ -88,7 +89,7 @@
                         <p>
                             INR clinic visits avoided<sup>3,7,8</sup>
                         </p>
-                        <input type="text" value="E" />
+                        <input type="text" value="E" data-bind="value:valueE()"/>
                     </div>
                     <div class="calculation-description">
                         <input type="button" value="+" />
@@ -102,7 +103,7 @@
                         <p>
                             Nurse visits avoided<sup>9</sup>
                         </p>
-                        <input type="text" value="G" />
+                        <input type="text" value="G" data-bind="value:valueG()"/>
                     </div>
                     <div class="calculation-description">
                         <input type="button" value="+" class="btn-add" />
@@ -115,7 +116,7 @@
                         <p>
                             Hospital bed days saved<sup>10</sup>
                         </p>
-                        <input type="text" value="H" />
+                        <input type="text" value="H" data-bind="value:valueH()" />
                     </div>
                     <div class="calculation-description">
                         <input type="button" value="+" class="btn-add" />
@@ -128,21 +129,21 @@
             <div class="pe-calculator">
                 <div class="calculate">
                     <div>
-                        <input type="text" placeholder="Enter number of  patients with PE here" />
+                        <input type="text" placeholder="Enter number of  patients with PE here" data-bind="value:numberPe"/>
                         <input type="button" value="CALCULATE" />
                         <input type="button" class="help" value="?" />
                     </div>
                     <div class="description">
                         <p>
                             Assumptions to estimate calculations:proportion of patients with PE contraindicated for Xarelto or LMWH/VKA<sup>1,2</sup>=15%<br/>
-                            Number of patients with PE-15%=<span class="patients-count"> [A]</span> Total number of PE patients eligible for dual LMWH/VKA or Xarelto
+                            Number of patients with PE-15%=<span class="patients-count" data-bind="value:valueAPe()"></span> Total number of PE patients eligible for dual LMWH/VKA or Xarelto
                         </p>
                     </div>
                 </div>
                 <div class="calculation-injections">
                     <div class="calculation-name">
                         <p>Injections avoided<sup>3-7</sup></p>
-                        <input type="text" value="[B+C]" />
+                        <input type="text" data-bind="value:summaPe()" />
                     </div>
                     <div class="calculation-description">
                         <input type="button" value="+" />
@@ -156,7 +157,7 @@
                         <p>
                             INR clinic visits avoided<sup>3,7,8</sup>
                         </p>
-                        <input type="text" value="E" />
+                        <input type="text" data-bind="value:valueI()" />
                     </div>
                     <div class="calculation-description">
                         <input type="button" value="+" />
@@ -170,7 +171,7 @@
                         <p>
                             Hospital bed days saved<sup>10</sup>
                         </p>
-                        <input type="text" value="H" />
+                        <input type="text" data-bind="value:valueJ()" />
                     </div>
                     <div class="calculation-description">
                         <input type="button" value="+"  class="btn-add"/>
@@ -180,30 +181,30 @@
                     </div>
                 </div>
             </div>
-            <div class="combined-calculation">
+            <div class="combined-calculation ">
                 <p class="combined-title">Combined DVT + PE Resources Saved</p>
                 <div>
                     <p>Injections avoided<sup>3-7,11</sup></p>
-                    <span>[DVT + PE]</span>
+                    <span data-bind="text:summBc()"></span>
                 </div>
                 <div>
                     <p>INR clinic visits avoided<sup>3,7,8,11</sup></p>
-                    <span>[DVT + PE]</span>
+                    <span data-bind="text:summEi()"></span>
                 </div>
                 <div>
                     <p>Nurse visits avoided<sup>9</sup></p>
-                    <span>[DVT]</span>
+                    <span data-bind="text:valueG()"></span>
                 </div>
                 <div>
                     <p>Hospital bed days saved<sup>10</sup></p>
-                    <span>[DVT + PE]</span>
+                    <span data-bind="text:summHj()"></span>
                 </div>
             </div>
             <p class="footnote">
                 Numbers provided are based on general epidemiological research and on clinical trial experience from the Phase III programme with Xarelto. Healthcare practice may be different in your country (both before and after introduction of Xarelto), and thus the estimation may not reflect your country’s perspective. Actual costs are not included.
             </p>
         </div>
-        <div class="competitors-slide">
+        <div class="competitors-slide" data-bind="visible:competitorsSlide">
             <h1>Xarelto<sup>®</sup>DVT Patients Reported Higher Satisfaction<sup>a,16</sup></h1>
             <div class="scales-block">
                 <div class="double-arrow">
@@ -242,14 +243,13 @@
                         </div>
                     </div>
                     <p class="scale-name">Global satisfaction<sup>b</sup></p>
-
                 </div>
                 <div class="scales-parameters">
-                    <div>
+                    <div id="first-scalepan">
                         <div class="square pink-bg"></div>
                         <p>Xarelto (N=702)</p>
                     </div>
-                    <div>
+                    <div id="second-scalepan">
                         <div class="square blue-bg"></div>
                         <p>Enoxaparin/VKA (N=677)</p>
                     </div>
@@ -267,5 +267,6 @@
         </div>
     </div>
 </div>
+<script type='text/javascript' src='script.js'></script>
 </body>
 </html>

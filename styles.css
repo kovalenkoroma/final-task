@@ -13,6 +13,7 @@ article, aside, canvas, footer, header, hgroup, nav, section
 }
 body {
     line-height: 1;
+    overflow: hidden;
 }
 ol, ul {
     list-style: none;
@@ -33,6 +34,7 @@ ol, ul {
 
 #main{
     width:1024px;
+    height:768px;
     margin:0 auto;
     font-family: FrutigerSTD;
     border:1px solid red;
@@ -68,6 +70,9 @@ header nav ul li a{
     font-size:15px;
     color:#676767;
 }
+header nav ul li a:hover{
+    text-shadow: 0px 1px 16px rgba(60, 64, 186, 1);
+}
 h1{
     width:592px;
     margin-left:212px;
@@ -85,7 +90,7 @@ h1{
     font-size: 15px;
 }
 .graphics-slide{
-    display:none;
+    position:absolute;
 }
 .graphics{
     width:597px;
@@ -224,55 +229,12 @@ h1{
 #main{
     overflow: hidden;
 }
-.graphics-slide{
-}
-/*
-.form-slide{
-display:none;
-width:200px;
-height:300px;
-    float:left;
-    position:relative;
-    bottom:500px;
-    left:1024px;
-    -webkit-animation: animate222 ease-in-out 1s;
-    -webkit-animation-delay:1s;
-    -webkit-animation-fill-mode:forwards;
-    border:1px solid red;
-}
-.triangle hr{
-
-    border:1px solid black;
-}
-.triangle hr:first-of-type{
-    position: relative;
-    top:10px;
-    left:10px;
-    -webkit-transform: rotate(60deg);
-    border:1px solid black;
-}
-.triangle hr:last-of-type{
-    -webkit-transform:rotate(-60deg);
-    border:1px solid black;
-}
-.price{
-    background: red;
-    width:200px;
-    height:70px;
-    border-bottom-right-radius: 150px  100px;
-    border-bottom-left-radius: 150px  100px;
-}
-*/
-@-webkit-keyframes animate222
-{
-    from {left:1024px;}
-    to {left:0;}
-}
 
 /**************Calculator styles*********************/
 .calculator-slide{
-    display:none;
+    position:absolute;
 }
+
 .calculate{
     width:100%;
     height:106px;
@@ -448,6 +410,9 @@ height:300px;
     font-size:10px;
 }
 /*************Scales style******************/
+.competitors-slide{
+    position: absolute;
+}
 .competitors-slide h1{
     width:100%;
     margin-left:102px;
@@ -534,17 +499,12 @@ height:300px;
     position: relative;
     top:107px;
     right:116px;
-    -webkit-animation: scalepan-left ease-in-out 0.5s;
-    -webkit-animation-delay:1s;
-    -webkit-animation-fill-mode:forwards;
+
 }
 .scalepan-right{
     position: relative;
     top:30px;
     left:96px;
-    -webkit-animation: scalepan-right ease-in-out 0.5s;
-    -webkit-animation-delay:1s;
-    -webkit-animation-fill-mode:forwards;
 }
 
 .scalepan-left div,.scalepan-right  div{
@@ -599,10 +559,6 @@ height:300px;
     top:66px;
     left:58px;
     background: #5b2c81;
-    -webkit-animation: animate-lever ease-in-out 0.5s;
-    -webkit-animation-delay:1s;
-    -webkit-animation-fill-mode:forwards;
-   /* -webkit-transform: rotate(5deg);*/
 }
 .scales .triangle-up{
     border-left: 11px solid transparent;
@@ -665,19 +621,10 @@ height:300px;
     font-size: 14px;
     float:left;
 }
-.scales-block:after{
-    content:'TSQM II Global Satisfaction';
-    display:block;
-    width:148px;
-    height:102px;
-    position:relative;
-    top:300px;
-}
-
 .tab{
     width:148px;
     height:102px;
-    margin-right:65px;
+    margin-right:-1px;
     float:right;
     border-left:1px solid #c7d2dd;
     border-bottom:1px solid #c7d2dd;
@@ -699,17 +646,33 @@ height:300px;
     margin:120px 0px 37px 60px;
     font-size: 10px;
 }
+#first-scalepan:hover,#second-scalepan:hover{
+    cursor:pointer;
+}
 /********Animation scale********/
-@-webkit-keyframes animate-lever
+@-webkit-keyframes animate-lever1
 {
     from {-webkit-transform: rotate(0deg);}
     to {-webkit-transform: rotate(5deg);}
 }
-@-webkit-keyframes scalepan-left{
+@-webkit-keyframes scalepan-left1{
     from {top:107px;}
     to {top:98px;}
 }
-@-webkit-keyframes scalepan-right{
+@-webkit-keyframes scalepan-right1{
     from {top:30px;}
     to {top:38px;}
+}
+@-webkit-keyframes animate-lever2
+{
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(-5deg);}
+}
+@-webkit-keyframes scalepan-left2{
+    from {top:107px;}
+    to {top:117px;}
+}
+@-webkit-keyframes scalepan-right2{
+    from {top:30px;}
+    to {top:20px;}
 }
