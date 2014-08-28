@@ -448,11 +448,25 @@ height:300px;
     font-size:10px;
 }
 /*************Scales style******************/
+.competitors-slide h1{
+    width:100%;
+    margin-left:102px;
+    margin-top:38px;
+    margin-bottom:57px;
+    font-size:30px;
+    text-align: justify;
+}
+.competitors-slide h1 sup{
+    font-size:18px;
+}
 .scales-block{
     width:898px;
-   height:395px;
+    height:392px;
     margin-left:60px;
-    border:1px solid black;
+    background-color: rgba(255,255,255,0.7);
+    -webkit-box-shadow:0px 1px 1px 0px rgba(50, 50, 50, 0.1),1px 0px 1px 0px rgba(50, 50, 50, 0.1),0px -1px 1px 0px rgba(50, 50, 50, 0.1), -1px 0px 1px 0px rgba(50, 50, 50, 0.1);
+    -moz-box-shadow:   0px 1px 1px 0px rgba(50, 50, 50, 0.1),1px 0px 1px 0px rgba(50, 50, 50, 0.1),0px -1px 1px 0px rgba(50, 50, 50, 0.1), -1px 0px 1px 0px rgba(50, 50, 50, 0.1);
+    box-shadow:        0px 1px 1px 0px rgba(50, 50, 50, 0.1),1px 0px 1px 0px rgba(50, 50, 50, 0.1),0px -1px 1px 0px rgba(50, 50, 50, 0.1), -1px 0px 1px 0px rgba(50, 50, 50, 0.1);
 }
 .double-arrow{
     float:left;
@@ -461,7 +475,8 @@ height:300px;
     margin-top:39px;
 }
 .preference{
-    font-size:18px;
+    font-family: FrutigerBlack;
+    font-size:15px;
     position: relative;
     right:46px;
 }
@@ -549,12 +564,12 @@ height:300px;
     left:132px;
     top:62px;
 }
-.scales-parameters{
-    float:left;
-}
-.square{
-    width:21px;
-    height:21px;
+.scale-title{
+    padding-top:12px;
+    font-family: FrutigerBlack;
+    font-size:22px;
+    color:white;
+    text-align: center;
 }
 
 .triangle-up{
@@ -613,7 +628,77 @@ height:300px;
     bottom:112px;
     left:120px;
 }
+.stand p{
+    padding-top:3px;
+    text-align: center;
+    color:white;
+}
+.scale-name{
+    position:relative;
+    bottom:100px;
+    left:126px;
+    font-family: FrutigerBlack;
+    font-size:13px;
+    color:#5b2c81;
+}
+.scale-name sup{
+    font-family:FrutigerSTD;
+    font-size:10px;
+}
+.scales-parameters{
+    margin-top:30px;
+    float:left;
+}
+.square{
+    width:21px;
+    height:21px;
+    float:left;
+}
+.scales-parameters div{
+    margin-bottom: 8px;
+    clear:both;
+}
+.scales-parameters p{
+    margin-left:5px;
+    padding-top:2px;
+    font-family: FrutigerBlack;
+    font-size: 14px;
+    float:left;
+}
+.scales-block:after{
+    content:'TSQM II Global Satisfaction';
+    display:block;
+    width:148px;
+    height:102px;
+    position:relative;
+    top:300px;
+}
 
+.tab{
+    width:148px;
+    height:102px;
+    margin-right:65px;
+    float:right;
+    border-left:1px solid #c7d2dd;
+    border-bottom:1px solid #c7d2dd;
+    border-right:1px solid #c7d2dd;
+    background:linear-gradient(to bottom, #f6fafd 0%, #f2f7fc 50%, #fdfeff 100%);
+}
+.tab p{
+    margin-top:25px;
+    font-family: FrutigerBlack;
+    font-size: 18px;
+    text-align: center;
+    color:#4a2278;
+}
+.tab p span{
+    font-size: 14px;
+}
+.competitors-slide .footnote{
+    width:720px;
+    margin:120px 0px 37px 60px;
+    font-size: 10px;
+}
 /********Animation scale********/
 @-webkit-keyframes animate-lever
 {
