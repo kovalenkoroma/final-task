@@ -10,15 +10,13 @@
 <div id="main">
     <header>
         <nav>
-            <ul>
-                <li><a href="#" data-bind="click:showGraphics">Graphics</a></li>
-                <li><a href="#" data-bind="click:showCalculator">Calculator</a></li>
-                <li><a href="#" data-bind="click:showCompetitors">Competitors</a></li>
+            <ul data-bind="foreach: slides()">
+                <li><a href="#" data-bind="click: $parent.showSlide, text:name"></a></li>
             </ul>
         </nav>
     </header>
     <div id="content">
-        <div class="graphics-slide" data-bind="visible:graphicsSlide">
+        <section class="graphics-slide" data-bind="visible:slides()[0].visibility">
             <h1>Xarelto<sup>®</sup>: An Effective Treatment Option in Your VTE Patients with Cancer<sup>a,8</sup></h1>
             <p class="title-axis-y">%PATIENTS<sup>b</sup></p>
             <div class="graphics">
@@ -49,19 +47,21 @@
                     <p>0</p>
                 </div>
                 <p class="title-axis-x">Cancer</p>
+
             </div>
+            <img src="images/user.png" alt="" />
             <p class="footnote">
                 <sup>a</sup>Xarelto is contraindicated in lesions or conditions, if they are considered to be a significant risk for major
                 bleeding, which may include the presence of malignant neoplasms at high risk of bleeding.
                 <sup>b</sup>Outcome: symptomatic, recurrent VTE.
             </p>
-        </div>
-        <div class="calculator-slide" data-bind="visible:calculatorSlide">
+        </section>
+        <section class="calculator-slide" data-bind="visible:slides()[1].visibility">
             <h1>Xarelto<sup>®</sup>Estimator of Resources Saved</h1>
             <div class="dvt-calculator">
                 <div class="calculate">
                     <div>
-                        <input type="text" placeholder="Enter number of DVT patients here" data-bind="value:numberDvt"/>
+                        <input type="text" placeholder="Enter number of DVT patients here" data-bind="value:numberDvt,valueUpdate:'afterkeydown'"/>
                         <input type="button" value="CALCULATE" />
                         <input type="button" class="help" value="?" />
                     </div>
@@ -129,7 +129,7 @@
             <div class="pe-calculator">
                 <div class="calculate">
                     <div>
-                        <input type="text" placeholder="Enter number of  patients with PE here" data-bind="value:numberPe"/>
+                        <input type="text" placeholder="Enter number of  patients with PE here" data-bind="value:numberPe,valueUpdate: 'afterkeydown'"/>
                         <input type="button" value="CALCULATE" />
                         <input type="button" class="help" value="?" />
                     </div>
@@ -203,8 +203,8 @@
             <p class="footnote">
                 Numbers provided are based on general epidemiological research and on clinical trial experience from the Phase III programme with Xarelto. Healthcare practice may be different in your country (both before and after introduction of Xarelto), and thus the estimation may not reflect your country’s perspective. Actual costs are not included.
             </p>
-        </div>
-        <div class="competitors-slide" data-bind="visible:competitorsSlide">
+        </section>
+        <section class="competitors-slide" data-bind="visible:slides()[2].visibility">
             <h1>Xarelto<sup>®</sup>DVT Patients Reported Higher Satisfaction<sup>a,16</sup></h1>
             <div class="scales-block">
                 <div class="double-arrow">
@@ -264,7 +264,7 @@
                 ACTS (Anti Clot Treatment Scale) and TSQM (Treatment Satisfaction Questionnaire for Medication) in follow up visits.<sup>5,16</sup></br>
                 <sup>b</sup>Score values given for burdens and benefits measured by ACTS; effectiveness, side effects, convenience and global satisfaction measured by TSQM scale.<sup>16</sup>
             </p>
-        </div>
+        </section>
     </div>
 </div>
 <script type='text/javascript' src='script.js'></script>

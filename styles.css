@@ -2,7 +2,7 @@ html, body, div,
 h1, h2, h3, h4, h5, h6, p,
 a, b, u, i, center,
 dl, dt, dd, ol, ul, li,form,table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, footer, header, hgroup, nav, section
+article, aside, canvas, footer, header, nav, section
 {
     margin: 0;
     padding: 0;
@@ -75,8 +75,8 @@ header nav ul li a:hover{
 }
 h1{
     width:592px;
-    margin-left:212px;
     margin-top:44px;
+    margin-left:212px;
     font-family: FrutigerBlack;
     font-size:27.12px;
     text-align:center;
@@ -90,13 +90,21 @@ h1{
     font-size: 15px;
 }
 .graphics-slide{
+    width:930px;
     position:absolute;
+}
+.graphics-slide img{
+    width:90px;
+    float:left;
+    margin-top:336px;
+    margin-left: 13px;
 }
 .graphics{
     width:597px;
     height:361px;
+    float:left;
+    margin-top:72px;
     margin-left:212px;
-    margin-top:68px;
     border-top-right-radius: 40px;
     border-bottom-left-radius: 40px;
     border:2px solid #542f80;
@@ -218,9 +226,13 @@ h1{
     from {opacity:0;}
     to {opacity:1;}
 }
-.footnote{
-    width:530px;
-    margin:80px 0 0 67px;
+
+.graphics-slide .footnote{
+    width:532px;
+    position:relative;
+    top:83px;
+    left:68px;
+    clear:both;
     font-size:12px;
     font-family: FrutigerLight;
     color:#7c7a7b
@@ -404,9 +416,11 @@ h1{
     width:182px;
     margin-right: 0;
 }
-.footnote{
+.calculator-slide .footnote{
     width:680px;
     margin:92px 0 0 108px;
+    font-family: FrutigerLight;
+    color:#7c7a7b;
     font-size:10px;
 }
 /*************Scales style******************/
@@ -452,7 +466,6 @@ h1{
 .scalepan-left hr,.scalepan-right  hr{
     width:158px;
     position:relative;
-
 }
 .left{
     border:2px solid #ff0090;
@@ -644,6 +657,8 @@ h1{
 .competitors-slide .footnote{
     width:720px;
     margin:120px 0px 37px 60px;
+    font-family: FrutigerLight;
+    color:#7c7a7b;
     font-size: 10px;
 }
 #first-scalepan:hover,#second-scalepan:hover{
