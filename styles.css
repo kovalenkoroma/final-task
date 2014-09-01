@@ -37,7 +37,6 @@ ol, ul {
     height:768px;
     margin:0 auto;
     font-family: FrutigerSTD;
-    border:1px solid red;
     background: url(images/background.jpg) no-repeat;
     background-size: cover;
 }
